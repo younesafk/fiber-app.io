@@ -1,0 +1,49 @@
+<!-- <div *ngIf="isSignedIn"> -->
+    <button (click)="logout()" routerLink="../loginpage">Logout</button>
+
+    <table class="table" matSort (matSortChange)="sortData($event)" >
+        <thead>
+            <tr>
+                <th scope="col" >#</th>
+                <th scope="col" mat-sort-header="name">Tech</th>
+                <th scope="col" >Date</th>
+                <th scope="col" mat-sort-header="client">Client</th>
+                <th scope="col" mat-sort-header="sip">SIP</th> 
+                <th scope="col" >Situation</th>
+                <th scope="col" >Commantiare</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let entry of Entrys; let i = index">
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ entry.name }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.client }}</td>
+                <td>{{ entry.SIP }}</td>
+                <td>{{ entry.Situation }}</td>
+                <td>{{ entry.Commentaire }}</td>
+            <!-- <td>
+                <span routerLink="editentry/{{ entry.id }}" class="btn btn-primary">Edit</span>
+            </td> -->
+            
+        </tr>
+    </tbody>
+</table>
+
+<!-- </div> -->
+<!-- <div *ngIf="!isSignedIn">
+    <button routerLink="loginpage" class="contaire">login first</button>
+</div> -->
+
+<!-- <ul>
+    <li ng-repeat="Entrys in Entrys">
+      {{$index}} {{Entrys}}
+    </li>
+  </ul> -->
+
+  <!-- <ul>
+    <li *ngFor="let item of Entrys">
+        <p>ppp</p>
+        {{ item }}
+    </li>
+  </ul> -->

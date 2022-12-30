@@ -1,0 +1,57 @@
+
+<form [formGroup]="entryform" (ngSubmit)="onSubmit()" novalidate>
+<table class="tab">
+    
+    <tr>
+        <th>
+            <span style="color: aliceblue;">Tech: </span></th>
+           <th> <input type="text" style="width: 199px;" class="inp" formControlName="name" required placeholder="Votre Nom" />
+        </th>
+     </tr>
+    <tr>
+        <th>
+            <span style="color: aliceblue;">Date: </span></th>
+            <th><input type="date" style="width: 199px;" formControlName="date" class="inp" required />
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <span style="color: aliceblue;">Client: </span></th>
+           <th> <input type="text" style="width: 199px;" class="inp" formControlName="client" required placeholder="Client Nom" />
+        </th>
+     </tr>
+    <tr>
+        <th>
+            <span style="color: aliceblue;">SIP: </span></th>
+         <th>   <input type="text" style="width: 199px;" class="inp" formControlName="SIP" required placeholder="SIP" />
+        </th>
+    </tr>
+    <tr>
+        <th>
+        <span style="color: aliceblue;">Situation :</span></th>
+       <th> <select formControlName="Situation" style="width: 199px; height: 30px;" required>
+            <option> </option>
+            <option>RACCO</option>
+            <option>RECCO</option>
+            <option>SAV</option>
+            <option>TRAVAUX</option>
+        </select>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <span style="color: aliceblue;">Commetaire</span></th>
+            <th><textarea rows="2" cols="22" formControlName="Commentaire"></textarea>
+        </th>
+    </tr>
+    <tr>
+        <th></th><th></th>
+        <th>
+            <button type="submit" [disabled]="!entryform.valid">Envoyez</button>
+        </th>
+        <th>    
+         <button (click)="logout()" routerLink="loginpage">Logout</button>
+        </th>
+     </tr>
+</table>
+</form>
